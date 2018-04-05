@@ -65,7 +65,14 @@ apt-get install -y \
     rpm \
     npm \
     bats \
-    shellcheck
+    shellcheck \
+    ruby-dev \
+    virtualenv
+
+# latest git
+add-apt-repository ppa:git-core/ppa \
+    && apt-get update \
+    && apt-get install -y git
 
 #
 # Configure user
@@ -73,3 +80,15 @@ apt-get install -y \
 
 git config --global user.name "Your Name"
 git config --global user.email "you@email.com"
+
+#
+# Prepare for running ELK stack in Docker
+#
+
+echo "vm.max_map_count=262144" | sudo tee /etc/sysctl.d/10-elasticsearch.conf
+
+#
+# Set timezone
+#
+
+timedatectl set-timezone Europe/Stockholm
