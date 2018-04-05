@@ -16,8 +16,15 @@ Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/xenial64"
 
   config.vm.network :forwarded_port, guest: 8080, host: 8080
+  config.vm.network :forwarded_port, guest: 3030, host: 3030
 
-  config.vm.synced_folder ENV['USERPROFILE'], "/home/host"
+  # For the ELK stack
+  config.vm.network :forwarded_port, guest: 5000, host: 5000
+  config.vm.network :forwarded_port, guest: 5601, host: 5601
+  config.vm.network :forwarded_port, guest: 9200, host: 9200
+  config.vm.network :forwarded_port, guest: 9300, host: 9300
+
+  config.vm.synced_folder ENV['USERPROFILE'], "/host"
 
   config.vm.provider "virtualbox" do |vb|
     vb.memory = "4096"
