@@ -63,7 +63,6 @@ apt-get install -y \
     maven \
     subversion \
     rpm \
-    npm \
     bats \
     shellcheck \
     ruby-dev \
@@ -73,6 +72,11 @@ apt-get install -y \
 add-apt-repository ppa:git-core/ppa \
     && apt-get update \
     && apt-get install -y git
+
+# Latest NodeJS LTS
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+apt-get update \
+  && apt-get install -y nodejs
 
 #
 # Configure user
