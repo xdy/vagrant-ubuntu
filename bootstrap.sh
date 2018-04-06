@@ -66,6 +66,7 @@ apt-get install -y \
     bats \
     shellcheck \
     ruby-dev \
+    ruby-bundler \
     virtualenv
 
 # latest git
