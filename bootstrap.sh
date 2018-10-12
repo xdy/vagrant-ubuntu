@@ -42,7 +42,7 @@ chmod +x /usr/local/bin/docker-compose
 # Add default user to docker group (no need to run docker and docker-compose with "sudo")
 #
 
-usermod -a -G docker ubuntu
+#usermod -a -G docker ubuntu
 
 #
 # Install ansible
@@ -82,7 +82,6 @@ apt-get update \
 #
 # Configure user
 #
-
 git config --global user.name "Your Name"
 git config --global user.email "you@email.com"
 

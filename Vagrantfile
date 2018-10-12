@@ -13,7 +13,7 @@ Vagrant.configure("2") do |config|
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
 
-  config.vm.box = "ubuntu/xenial64"
+  config.vm.box = "bento/ubuntu-16.04"
 
   config.vm.network :forwarded_port, guest: 8080, host: 8080
   config.vm.network :forwarded_port, guest: 3030, host: 3030
@@ -26,7 +26,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.synced_folder ENV['USERPROFILE'], "/host"
 
-  config.vm.provider "virtualbox" do |vb|
+  config.vm.provider "hyperv" do |vb|
     vb.memory = "4096"
   end
 
