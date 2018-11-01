@@ -42,7 +42,7 @@ chmod +x /usr/local/bin/docker-compose
 # Add default user to docker group (no need to run docker and docker-compose with "sudo")
 #
 
-#usermod -a -G docker ubuntu
+usermod -a -G docker vagrant
 
 #
 # Install ansible
